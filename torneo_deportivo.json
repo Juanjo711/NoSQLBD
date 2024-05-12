@@ -1,0 +1,60 @@
+use torneo_deportivo
+
+db.createCollection("deportistas")
+
+db.deportistas.insertMany([
+    {"nombre": "Kevin De Bruyne", "edad": 32, "equipo_id": "101"},
+    {"nombre": "Luis Diaz", "edad": 27, "equipo_id": "102"},
+    {"nombre": "Martin Odegaard", "edad": 25, "equipo_id": "103"},
+    {"nombre": "Alejandro Garnacho", "edad": 19, "equipo_id": "104"},
+    {"nombre": "Enzo Fernandez", "edad": 23, "equipo_id": "105"}
+])
+
+db.createCollection("equipos")
+
+db.equipos.insertMany([
+    {"_id": 101, "nombre":"Manchester City", "pais": "Inglaterra", "entrenador_id": 201},
+    {"_id": 102, "nombre": "Liverpool", "pais": "Inglaterra", "entrenador_id": 202},
+    {"_id": 103, "nombre": "Arsenal", "pais": "Inglaterra", "entrenador_id": 203},
+    {"_id": 104, "nombre": "Manchester United", "pais": "Inglaterra", "entrenador_id": 204},
+    {"_id": 105, "nombre": "Chelsea", "pais": "Inglaterra", "entrenador_id": 205}
+])
+
+db.createCollection("entrenadores")
+
+db.entrenadores.insertMany([
+    {"_id": 201, "nombre": "Pep Guardiola", "edad": 53},
+    {"_id": 202, "nombre": "Jurgen Klopp", "edad": 56},
+    {"_id": 203, "nombre": "Mikel Arteta", "edad": 42},
+    {"_id": 204, "nombre": "Erik ten Hag", "edad": 54},
+    {"_id": 205, "nombre": "Mauricio Pochettino", "edad": 52}
+])
+
+db.createCollection("arbitros")
+
+db.arbitros.insertMany([
+    {"nombre": "Michael Oliver", "experiencia": 3},
+    {"nombre": "Paul Tierney", "experiencia": 4},
+    {"nombre": "Anthony Taylor", "experiencia": 4},
+    {"nombre": "Andrew Madley", "experiencia": 5},
+])
+
+db.createCollection("encuentros_deportivos")
+
+db.encuentros_deportivos.insertMany([
+    {"equipo_local": "Manchester City", "equipo_visitante": "Liverpool", "arbitro_id": "6640ea8894431ee3ced5f7cc", "fecha": "2024-05-11 18:00:00", "resultado": {"equipo_local":0,"equipo_visitante":0}},
+    {"equipo_local": "Arsenal", "equipo_visitante": "Manchester United", "arbitro_id": "6640ea8894431ee3ced5f7cd", "fecha": "2024-05-12 17:30:00", "resultado": {"equipo_local":2,"equipo_visitante":1}},
+    {"equipo_local": "Chelsea", "equipo_visitante": "Manchester City", "arbitro_id": "6640ea8894431ee3ced5f7cf", "fecha": "2024-04-12 16:00:00", "resultado": {"equipo_local":2,"equipo_visitante":3}},
+    {"equipo_local": "Liverpool", "equipo_visitante": "Arsenal", "arbitro_id": "6640ea8894431ee3ced5f7ce", "fecha": "2024-07-11 10:45:00", "resultado":{"equipo_local":2,"equipo_visitante":1}},
+    {"equipo_local": "Manchester City", "equipo_visitante": "Manchester United", "arbitro_id": "6640ea8894431ee3ced5f7cd", "fecha": "2024-03-01 14:00:00", "resultado":{"equipo_local":4,"equipo_visitante":2}}
+])
+
+db.createCollection("tabla_posiciones")
+
+db.tabla_posiciones.insertMany([
+  {"poscision": 1, "equipo_id": 201, "puntos": 9, "ganados": 3, "empatados": 0, "perdidos":0},
+  {"posicion": 2, "equipo_id": 202, "puntos": 7, "ganados": 2, "empatados": 1, "perdidos":0},
+  {"posicion": 3, "equipo_id": 203, "puntos": 7, "ganados": 2, "empatados":1, "perdidos":0},
+  {"posicion":4, "equipo_id": 205, "puntos":4, "ganados": 1, "empatados": 1, "perdidos": 2},
+  {"posicion": 5, "equipo_id": 204, "puntos":2, "ganados": 0, "empatados": 2, "perdidos": 1}
+])
