@@ -3,9 +3,9 @@ use torneo_deportivo
 rs.initiate({
     _id: "eventoDeportivoSet",
     members: [
-        { _id: 0, host: "host1:27017" },  // Nodo primario
-        { _id: 1, host: "host2:27017" },  // Nodo secundario
-        { _id: 2, host: "host3:27017" }   // Nodo secundario
+        { _id: 0, host: "localhost:27017" },  // Nodo primario
+        { _id: 1, host: "localhost:27018" },  // Nodo secundario
+        { _id: 2, host: "localhost:27019" }   // Nodo secundario
     ]
 });
 
