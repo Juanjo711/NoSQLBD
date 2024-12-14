@@ -1,0 +1,12 @@
+// Habilitar el sharding en la base de datos
+sh.enableSharding("torneoDB");
+
+// Crear shard key para la colección EncuentrosDeportivos
+sh.shardCollection("torneoDB.EncuentrosDeportivos", { fecha: 1, equipoLocal: 1 });
+
+// Crear shard key para la colección TablaDePosiciones
+sh.shardCollection("torneoDB.TablaDePosiciones", { equipo: 1 });
+
+// Configuración de los índices en las colecciones para optimizar las consultas
+db.EncuentrosDeportivos.createIndex({ fecha: 1, equipoLocal: 1 });
+db.TablaDePosiciones.createIndex({ equipo: 1 });
